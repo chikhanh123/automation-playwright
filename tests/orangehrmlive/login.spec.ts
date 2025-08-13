@@ -1,8 +1,8 @@
 
-import { test } from '../utils/base-test';
-import { Tag } from '../utils/test-tags';
-import { loginTestData } from '../data/login-data';
-import { config } from '../configs/dev';
+import { test } from '../../utils/base-test';
+import { Tag } from '../../utils/test-tags';
+import { loginTestData } from '../../data/login-data';
+import { config } from '../../configs/dev';
 
 test.describe('OrangeHRM login feature', () => {
 

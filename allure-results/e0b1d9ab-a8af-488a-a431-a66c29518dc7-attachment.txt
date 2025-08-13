@@ -1,3 +1,0 @@
-✅ config.baseURL = https://opensource-demo.orangehrmlive.com/
-✅ config.userName = Admin
-✅ config.passWord = admin123

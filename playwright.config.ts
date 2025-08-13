@@ -14,7 +14,11 @@ import * as os from 'os';
  */
 export default defineConfig({
   timeout: 30 * 1000,
-  testDir: './tests',
+  expect: {
+    timeout: 30000 // 30 giây cho tất cả expect
+  },
+
+  testDir: './tests/orangehrmlive',
   testMatch: '**/*.spec.ts',
   /* Run tests in files in parallel */
   fullyParallel: false,
@@ -28,7 +32,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   reporter: [
     ['html', { open: 'never' }],  // Báo cáo mặc định HTML
-     ['allure-playwright', {
+    ['allure-playwright', {
       resultsDir: 'allure-results',
       links: {
         jira: {

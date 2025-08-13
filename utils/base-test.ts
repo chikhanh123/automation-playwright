@@ -3,6 +3,7 @@ import { LoginPage } from '../pages/login-page';
 import { HomePage } from '../pages/home-page';
 import { allure } from 'allure-playwright';
 import { SystemUsersPage } from '../pages/admin/system-users-page';
+import { DashboardPage } from '../pages/dashboard/dashboard-page';
 
 export { expect } from '@playwright/test';
 
@@ -10,6 +11,7 @@ type MyFixtures = {
   loginPage: LoginPage;
   homePage: HomePage;
   systemUserPage: SystemUsersPage;
+  dashboardPage: DashboardPage;
   allure: typeof allure;
 };
 
@@ -30,5 +32,9 @@ export const test = baseTest.extend<MyFixtures>({
   systemUserPage: async ({ page }, use) => {
     await page.waitForLoadState('load');
     await use(new SystemUsersPage(page));
+  },
+  dashboardPage: async ({ page }, use) => {
+    await page.waitForLoadState('load');
+    await use(new DashboardPage(page));
   },
 });

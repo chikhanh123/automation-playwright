@@ -31,6 +31,11 @@ export class BasePage {
         await expect(locator).toHaveText(value);
     }
 
+    async waitForLoadCompleted(locator: Locator, timeout: number = 10000) {
+        await expect(locator)
+            .toBeHidden({ timeout });
+    }
+
 
 
 
