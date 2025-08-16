@@ -36,6 +36,12 @@ export class HomePage extends BasePage {
         await this.addToCartButtons.nth(index).click();
     }
 
+    async addItemToCart(itemCount: number) {
+        for (let i = 0; i < itemCount; i++) {
+            await this.addItemToCartByIndex(i);
+        }
+    }
+
     // Verify the cart badge count
     async verifyCartBadgeCount(expectedCount: number) {
         const badgeText = await this.cartBadge.textContent();
@@ -58,6 +64,14 @@ export class HomePage extends BasePage {
             return order === 'az' ? a.localeCompare(b) : b.localeCompare(a);
         });
         expect(items).toEqual(sortedItems);
+    }
+
+    async verifySortedItemsFollowingPrice(order: string) {
+        const prices = await this.inventoryItems.locator('.inventory_item_price').allTextContents();
+        const sortedPrices = [...prices].map(price => parseFloat(price.replace('$', ''))).sort((a, b) => {
+            return order === 'lohi' ? a - b : b - a;
+        });
+        expect(prices.map(price => parseFloat(price.replace('$', '')))).toEqual(sortedPrices);
     }
 }
 

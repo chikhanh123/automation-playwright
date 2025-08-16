@@ -1,3 +1,4 @@
+import path from 'path';
 import { test } from '../../utils/base-test';
 import { Tag } from '../../utils/test-tags';
 
@@ -8,6 +9,7 @@ test.describe('Swag Labs Tests', () => {
         await loginPage.login('standard_user', 'secret_sauce');
         await homePage.homePageIsDisplayed();
     });
+  
 
     test(`[${Tag.SWAGLABS}] verify cart display number is selected`, async ({ homePage }) => {
         const numberOfItems = 3;
@@ -36,6 +38,24 @@ test.describe('Swag Labs Tests', () => {
         });
         await test.step('verify items are sorted Z to A', async () => {
             homePage.verifySortedItems('za');
+        });
+    })
+
+    test(`[${Tag.SWAGLABS}] fillter item low to high`, async ({ homePage }) => {
+        await test.step(' filter items low to high', async () => {
+            await homePage.selectSort("lohi");
+        });
+        await test.step('verify items are sorted low to high', async () => {
+            homePage.verifySortedItemsFollowingPrice('lohi');
+        });
+    })
+
+    test(`[${Tag.SWAGLABS}] fillter item high to low`, async ({ homePage }) => {
+        await test.step(' filter items high to low', async () => {
+            await homePage.selectSort("hilo");
+        });
+        await test.step('verify items are sorted high to low', async () => {
+            homePage.verifySortedItemsFollowingPrice('hilo');
         });
     })
 });
