@@ -1,10 +1,9 @@
 import { expect, Locator, Page } from "@playwright/test";
-import { BasePage } from "./base-page";
+import { BasePage } from "../base-page";
 
 
 
 export class LoginPage extends BasePage {
-    [x: string]: any;
     readonly usernameInput: Locator;
     readonly passwordInput: Locator;
     readonly loginButton: Locator;
@@ -12,10 +11,10 @@ export class LoginPage extends BasePage {
 
     constructor(page: Page) {
         super(page)
-        this.usernameInput = page.getByRole('textbox', { name: 'Username' });
-        this.passwordInput = page.getByRole('textbox', { name: 'Password' });
-        this.loginButton = page.getByRole('button', { name: 'Login' });
-        this.errorLogin = page.locator('//p[@class="oxd-text oxd-text--p oxd-alert-content-text"]')
+        this.usernameInput = page.locator('[data-test="username"]');
+        this.passwordInput = page.locator('[data-test="password"]');
+        this.loginButton = page.locator('[data-test="login-button"]');
+        this.errorLogin = page.locator('[data-test="error"]');
     }
 
     //Methods single
@@ -37,8 +36,8 @@ export class LoginPage extends BasePage {
     }
 
     //Methods verify
-    async errorLoginFailed() {
-        await this.expectEqualText(this.errorLogin, 'Invalid credentials');
+    async verifyErrorLoginFailed() {
+        await this.expectEqualText(this.errorLogin, 'Epic sadface: Sorry, this user has been locked out.');
     }
 
     async loginPageIsDisplayed() {

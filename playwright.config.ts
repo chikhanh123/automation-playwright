@@ -13,21 +13,21 @@ import * as os from 'os';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  timeout: 30 * 1000,
+  timeout: 10 * 1000,
   expect: {
-    timeout: 30000 // 30 giây cho tất cả expect
+    timeout: 5000 // 30 giây cho tất cả expect
   },
 
-  testDir: './tests/orangehrmlive',
+  testDir: './tests',
   testMatch: '**/*.spec.ts',
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 1,
+  workers: process.env.CI ? 5 : 5,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   reporter: [
@@ -45,7 +45,7 @@ export default defineConfig({
         node_version: process.version,
         env: process.env.ENV || 'dev',
       },
-    }],       // Tích hợp Allure
+    }], 
   ],
   use: {
     headless: false,

@@ -6,4 +6,6 @@ export enum Tag {
   UI = 'ui',
   LOGIN ='login',
   ADMIN = 'admin',
+  SWAGLABS = 'swagLabs',
+
 }

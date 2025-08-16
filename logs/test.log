@@ -1,0 +1,354 @@
+{
+  "config": {
+    "configFile": "/Users/admin/Documents/Source/playwright/automation-playwright/playwright.config.ts",
+    "rootDir": "/Users/admin/Documents/Source/playwright/automation-playwright/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "/Users/admin/Documents/Source/playwright/automation-playwright/node_modules/allure-playwright/dist/cjs/index.js",
+        {
+          "resultsDir": "allure-results",
+          "links": {
+            "jira": {}
+          },
+          "environmentInfo": {
+            "os_platform": "darwin",
+            "os_release": "24.4.0",
+            "node_version": "v20.10.0",
+            "env": "dev"
+          }
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "logs/test.log"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/admin/Documents/Source/playwright/automation-playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/admin/Documents/Source/playwright/automation-playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.2",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "swagLabs/login.spec.ts",
+      "file": "swagLabs/login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Swaglabs login feature",
+          "file": "swagLabs/login.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "[swagLabs] login successfully",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "epic",
+                      "description": "Authentication"
+                    },
+                    {
+                      "type": "feature",
+                      "description": "Login"
+                    },
+                    {
+                      "type": "severity",
+                      "description": "critical"
+                    },
+                    {
+                      "type": "tag",
+                      "description": "swagLabs"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30719,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/admin/Documents/Source/playwright/automation-playwright/pages/base-page.ts",
+                            "column": 31,
+                            "line": 31
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('[data-test=\"username\"]')\nExpected string: \u001b[32m\"Products\"\u001b[39m\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-test=\"username\"]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m../pages/base-page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m expectEqualText(locator\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m value\u001b[33m:\u001b[39m string) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m expect(locator)\u001b[33m.\u001b[39mtoHaveText(value)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36masync\u001b[39m waitForLoadCompleted(locator\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m number \u001b[33m=\u001b[39m \u001b[35m10000\u001b[39m) {\u001b[0m\n\u001b[2m    at HomePage.expectEqualText (/Users/admin/Documents/Source/playwright/automation-playwright/pages/base-page.ts:31:31)\u001b[22m\n\u001b[2m    at HomePage.homePageIsDisplayed (/Users/admin/Documents/Source/playwright/automation-playwright/pages/swagLabs/home-page.ts:17:20)\u001b[22m\n\u001b[2m    at /Users/admin/Documents/Source/playwright/automation-playwright/tests/swagLabs/login.spec.ts:28:28\u001b[22m\n\u001b[2m    at /Users/admin/Documents/Source/playwright/automation-playwright/tests/swagLabs/login.spec.ts:27:20\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "[2025-08-16T03:00:04.209Z] INFO: ✅ config.baseURL =https://www.saucedemo.com\n\n"
+                        },
+                        {
+                          "text": "[2025-08-16T03:00:04.209Z] INFO: ✅ config.userName =standard_user\n\n"
+                        },
+                        {
+                          "text": "[2025-08-16T03:00:04.209Z] INFO: ✅ config.passWord =secret_sauce\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Login page",
+                          "duration": 1727
+                        },
+                        {
+                          "title": "input valid userName and passWord",
+                          "duration": 210
+                        },
+                        {
+                          "title": "verify login successfully",
+                          "duration": 28035,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('[data-test=\"username\"]')\nExpected string: \u001b[32m\"Products\"\u001b[39m\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-test=\"username\"]')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('[data-test=\"username\"]')\nExpected string: \u001b[32m\"Products\"\u001b[39m\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-test=\"username\"]')\u001b[22m\n\n    at HomePage.expectEqualText (/Users/admin/Documents/Source/playwright/automation-playwright/pages/base-page.ts:31:31)\n    at HomePage.homePageIsDisplayed (/Users/admin/Documents/Source/playwright/automation-playwright/pages/swagLabs/home-page.ts:17:20)\n    at /Users/admin/Documents/Source/playwright/automation-playwright/tests/swagLabs/login.spec.ts:28:28\n    at /Users/admin/Documents/Source/playwright/automation-playwright/tests/swagLabs/login.spec.ts:27:20",
+                            "location": {
+                              "file": "/Users/admin/Documents/Source/playwright/automation-playwright/pages/base-page.ts",
+                              "column": 31,
+                              "line": 31
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m../pages/base-page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m expectEqualText(locator\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m value\u001b[33m:\u001b[39m string) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m expect(locator)\u001b[33m.\u001b[39mtoHaveText(value)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36masync\u001b[39m waitForLoadCompleted(locator\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m number \u001b[33m=\u001b[39m \u001b[35m10000\u001b[39m) {\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-08-16T03:00:00.384Z",
+                      "annotations": [
+                        {
+                          "type": "epic",
+                          "description": "Authentication"
+                        },
+                        {
+                          "type": "feature",
+                          "description": "Login"
+                        },
+                        {
+                          "type": "severity",
+                          "description": "critical"
+                        },
+                        {
+                          "type": "tag",
+                          "description": "swagLabs"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/Source/playwright/automation-playwright/test-results/swagLabs-login-Swaglabs-lo-2268a-swagLabs-login-successfully-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/admin/Documents/Source/playwright/automation-playwright/test-results/swagLabs-login-Swaglabs-lo-2268a-swagLabs-login-successfully-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/Source/playwright/automation-playwright/test-results/swagLabs-login-Swaglabs-lo-2268a-swagLabs-login-successfully-chromium/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/admin/Documents/Source/playwright/automation-playwright/test-results/swagLabs-login-Swaglabs-lo-2268a-swagLabs-login-successfully-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "61476aa29f428f576f89-b4e35eb453c57ef5f808",
+              "file": "swagLabs/login.spec.ts",
+              "line": 9,
+              "column": 9
+            },
+            {
+              "title": "[login] login failed",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30892,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/admin/Documents/Source/playwright/automation-playwright/pages/base-page.ts",
+                            "column": 31,
+                            "line": 31
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('[data-test=\"error\"]')\nExpected string: \u001b[32m\"Invalid credentials\"\u001b[39m\nReceived string: \u001b[31m\"Epic sadface: Sorry, this user has been locked out.\"\u001b[39m\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-test=\"error\"]')\u001b[22m\n\u001b[2m    31 × locator resolved to <h3 data-test=\"error\">…</h3>\u001b[22m\n\u001b[2m       - unexpected value \"Epic sadface: Sorry, this user has been locked out.\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39m../pages/base-page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m expectEqualText(locator\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m value\u001b[33m:\u001b[39m string) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m expect(locator)\u001b[33m.\u001b[39mtoHaveText(value)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36masync\u001b[39m waitForLoadCompleted(locator\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m number \u001b[33m=\u001b[39m \u001b[35m10000\u001b[39m) {\u001b[0m\n\u001b[2m    at LoginPage.expectEqualText (/Users/admin/Documents/Source/playwright/automation-playwright/pages/base-page.ts:31:31)\u001b[22m\n\u001b[2m    at LoginPage.verifyErrorLoginFailed (/Users/admin/Documents/Source/playwright/automation-playwright/pages/swagLabs/login-page.ts:40:20)\u001b[22m\n\u001b[2m    at /Users/admin/Documents/Source/playwright/automation-playwright/tests/swagLabs/login.spec.ts:38:29\u001b[22m\n\u001b[2m    at /Users/admin/Documents/Source/playwright/automation-playwright/tests/swagLabs/login.spec.ts:37:20\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "input invalid userName and passWord",
+                          "duration": 237
+                        },
+                        {
+                          "title": "verify login failed",
+                          "duration": 27963,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('[data-test=\"error\"]')\nExpected string: \u001b[32m\"Invalid credentials\"\u001b[39m\nReceived string: \u001b[31m\"Epic sadface: Sorry, this user has been locked out.\"\u001b[39m\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-test=\"error\"]')\u001b[22m\n\u001b[2m    31 × locator resolved to <h3 data-test=\"error\">…</h3>\u001b[22m\n\u001b[2m       - unexpected value \"Epic sadface: Sorry, this user has been locked out.\"\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('[data-test=\"error\"]')\nExpected string: \u001b[32m\"Invalid credentials\"\u001b[39m\nReceived string: \u001b[31m\"Epic sadface: Sorry, this user has been locked out.\"\u001b[39m\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-test=\"error\"]')\u001b[22m\n\u001b[2m    31 × locator resolved to <h3 data-test=\"error\">…</h3>\u001b[22m\n\u001b[2m       - unexpected value \"Epic sadface: Sorry, this user has been locked out.\"\u001b[22m\n\n    at LoginPage.expectEqualText (/Users/admin/Documents/Source/playwright/automation-playwright/pages/base-page.ts:31:31)\n    at LoginPage.verifyErrorLoginFailed (/Users/admin/Documents/Source/playwright/automation-playwright/pages/swagLabs/login-page.ts:40:20)\n    at /Users/admin/Documents/Source/playwright/automation-playwright/tests/swagLabs/login.spec.ts:38:29\n    at /Users/admin/Documents/Source/playwright/automation-playwright/tests/swagLabs/login.spec.ts:37:20",
+                            "location": {
+                              "file": "/Users/admin/Documents/Source/playwright/automation-playwright/pages/base-page.ts",
+                              "column": 31,
+                              "line": 31
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m../pages/base-page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m expectEqualText(locator\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m value\u001b[33m:\u001b[39m string) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m expect(locator)\u001b[33m.\u001b[39mtoHaveText(value)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36masync\u001b[39m waitForLoadCompleted(locator\u001b[33m:\u001b[39m \u001b[33mLocator\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m number \u001b[33m=\u001b[39m \u001b[35m10000\u001b[39m) {\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-08-16T03:00:33.692Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/Source/playwright/automation-playwright/test-results/swagLabs-login-Swaglabs-login-feature-login-login-failed-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/admin/Documents/Source/playwright/automation-playwright/test-results/swagLabs-login-Swaglabs-login-feature-login-login-failed-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/Source/playwright/automation-playwright/test-results/swagLabs-login-Swaglabs-login-feature-login-login-failed-chromium/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/admin/Documents/Source/playwright/automation-playwright/test-results/swagLabs-login-Swaglabs-login-feature-login-login-failed-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "61476aa29f428f576f89-360afe4873ebc8eb0aca",
+              "file": "swagLabs/login.spec.ts",
+              "line": 32,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-16T03:00:00.040Z",
+    "duration": 65583.345,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}[2025-08-16T03:03:22.763Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-08-16T03:03:22.763Z] INFO: ✅ config.userName =standard_user
+[2025-08-16T03:03:22.763Z] INFO: ✅ config.passWord =secret_sauce
+[2025-08-16T03:22:11.489Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-08-16T03:22:11.489Z] INFO: ✅ config.userName =standard_user
+[2025-08-16T03:22:11.489Z] INFO: ✅ config.passWord =secret_sauce
+[2025-08-16T07:46:09.256Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-08-16T07:46:09.257Z] INFO: ✅ config.userName =standard_user
+[2025-08-16T07:46:09.257Z] INFO: ✅ config.passWord =secret_sauce
+[2025-08-16T07:46:50.588Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-08-16T07:46:50.589Z] INFO: ✅ config.userName =standard_user
+[2025-08-16T07:46:50.589Z] INFO: ✅ config.passWord =secret_sauce
+[2025-08-16T07:49:54.252Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-08-16T07:49:54.252Z] INFO: ✅ config.userName =standard_user
+[2025-08-16T07:49:54.252Z] INFO: ✅ config.passWord =secret_sauce
+[2025-08-16T07:50:13.784Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-08-16T07:50:13.785Z] INFO: ✅ config.userName =standard_user
+[2025-08-16T07:50:13.785Z] INFO: ✅ config.passWord =secret_sauce
+[2025-08-16T07:52:21.736Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-08-16T07:52:21.768Z] INFO: ✅ config.userName =standard_user
+[2025-08-16T07:52:21.768Z] INFO: ✅ config.passWord =secret_sauce
