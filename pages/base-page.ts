@@ -29,7 +29,7 @@ export class BasePage {
         if (index === -1) {
           throw new Error(`Item with text "${textToSelect}" not found in dropdown. Available items: ${allTexts.join(', ')}`);
         }
-        await itemLocator.nth(index).click();
+        await this.click(itemLocator.nth(index));
     }
 
     async getText(locator: Locator): Promise<string> {
@@ -43,6 +43,10 @@ export class BasePage {
     async expectEqualText(locator: Locator, value: string) {
         await expect(locator).toHaveText(value);
     }
+    
+    async expectToHaveCount(locator: Locator, count: number) {
+        await expect(locator).toHaveCount(count);
+    }       
 
     async waitForLoadCompleted(locator: Locator, timeout: number = 10000) {
         await expect(locator)
