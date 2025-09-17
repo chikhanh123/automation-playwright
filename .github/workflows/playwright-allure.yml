@@ -62,18 +62,22 @@ jobs:
           import os
           p = 'site'
           if not os.path.exists(p):
-          os.makedirs(p)
+              os.makedirs(p)
+
           dirs = [d for d in os.listdir(p) if os.path.isdir(os.path.join(p, d)) and d.startswith('run-')]
+
           # sort by numeric suffix descending
           def keyfn(x):
-            try:
-              return int(x.replace('run-',''))
-            except:
-              return 0
+              try:
+                  return int(x.replace('run-', ''))
+              except:
+                  return 0
+
           dirs.sort(key=keyfn, reverse=True)
-          links = '\n'.join(f"<li><a href='/{os.environ.get('GITHUB_REPOSITORY')}/blob/gh-pages/{d}/index.html' target='_blank'>{d}</a></li>" for d in dirs)
+
           # better links for pages site (relative)
           links = '\n'.join(f"<li><a href='./{d}/'>{d}</a></li>" for d in dirs)
+
           html = f"""<!doctype html>
           <html>
           <head><meta charset='utf-8'><title>Allure Reports - {os.environ.get('GITHUB_REPOSITORY')}</title></head>
@@ -85,12 +89,14 @@ jobs:
             </ul>
           </body>
           </html>"""
-          open(os.path.join(p,'index.html'),'w').write(html)
+
+          with open(os.path.join(p, 'index.html'), 'w') as f:
+              f.write(html)
           PY
 
-                - name: Deploy site to gh-pages
-                  uses: peaceiris/actions-gh-pages@v3
-                  with:
-                    github_token: ${{ secrets.GITHUB_TOKEN }}
-                    publish_dir: ./site
-                    publish_branch: gh-pages
+      - name: Deploy site to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
