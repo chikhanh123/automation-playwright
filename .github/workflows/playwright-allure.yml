@@ -1,0 +1,45 @@
+name: Playwright Tests with Allure
+
+on:
+  push:
+    branches: [ "main" ]   # chạy khi push vào main
+  pull_request:
+    branches: [ "main" ]   # chạy khi tạo PR
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Lấy source code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Cài Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Cài dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Cài Playwright browsers
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      # Chạy test (toàn bộ hoặc smoke tùy bạn chỉnh)
+      - name: Run Playwright Tests
+        run: npm run test
+
+      # Sinh Allure Report
+      - name: Generate Allure Report
+        run: npm run report:build
+
+      # Upload Allure Report artifact để tải về
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: ./allure-report
