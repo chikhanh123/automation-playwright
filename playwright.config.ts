@@ -31,6 +31,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   reporter: [
+    ['json', { outputFile: 'test-results/results.json' }], // Báo cáo JSON
     ['html', { open: 'never' }],  // Báo cáo mặc định HTML
     ['allure-playwright', {
       resultsDir: 'allure-results',

@@ -427,3 +427,60 @@
 [2025-09-17T03:39:03.265Z] INFO: Item removed: Sauce Labs Fleece Jacket
 [2025-09-17T03:39:03.348Z] INFO: Item removed: Sauce Labs Onesie
 [2025-09-17T03:39:03.427Z] INFO: Item removed: Test.allTheThings() T-Shirt (Red)
+<<<<<<< HEAD
+=======
+[2025-09-19T04:37:22.711Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-09-19T04:37:22.715Z] INFO: ✅ config.userName =standard_user
+[2025-09-19T04:37:22.715Z] INFO: ✅ config.passWord =secret_sauce
+[2025-09-19T04:37:33.422Z] INFO: Item removed: Sauce Labs Backpack
+[2025-09-19T04:37:33.505Z] INFO: Item removed: Sauce Labs Bike Light
+[2025-09-19T04:37:33.590Z] INFO: Item removed: Sauce Labs Bolt T-Shirt
+[2025-09-19T04:37:33.677Z] INFO: Item removed: Sauce Labs Fleece Jacket
+[2025-09-19T04:37:33.757Z] INFO: Item removed: Sauce Labs Onesie
+[2025-09-19T04:37:33.838Z] INFO: Item removed: Test.allTheThings() T-Shirt (Red)
+[2025-09-19T04:38:09.468Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-09-19T04:38:09.468Z] INFO: ✅ config.userName =standard_user
+[2025-09-19T04:38:09.469Z] INFO: ✅ config.passWord =secret_sauce
+[2025-09-19T04:38:19.156Z] INFO: Item removed: Sauce Labs Backpack
+[2025-09-19T04:38:19.235Z] INFO: Item removed: Sauce Labs Bike Light
+[2025-09-19T04:38:19.286Z] INFO: Item removed: Sauce Labs Bolt T-Shirt
+[2025-09-19T04:38:19.368Z] INFO: Item removed: Sauce Labs Fleece Jacket
+[2025-09-19T04:38:19.452Z] INFO: Item removed: Sauce Labs Onesie
+[2025-09-19T04:38:19.531Z] INFO: Item removed: Test.allTheThings() T-Shirt (Red)
+[2025-09-19T04:38:23.934Z] INFO: Item removed: Sauce Labs Backpack
+[2025-09-19T04:38:24.017Z] INFO: Item removed: Sauce Labs Bike Light
+[2025-09-19T04:38:24.066Z] INFO: Item removed: Sauce Labs Bolt T-Shirt
+[2025-09-19T04:38:24.114Z] INFO: Item removed: Sauce Labs Fleece Jacket
+[2025-09-19T04:38:24.166Z] INFO: Item removed: Sauce Labs Onesie
+[2025-09-19T04:38:24.218Z] INFO: Item removed: Test.allTheThings() T-Shirt (Red)
+[2025-09-19T04:41:43.157Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-09-19T04:41:43.157Z] INFO: ✅ config.userName =standard_user
+[2025-09-19T04:41:43.157Z] INFO: ✅ config.passWord =secret_sauce
+[2025-09-19T04:41:52.876Z] INFO: Item removed: Sauce Labs Backpack
+[2025-09-19T04:41:52.974Z] INFO: Item removed: Sauce Labs Bike Light
+[2025-09-19T04:41:53.075Z] INFO: Item removed: Sauce Labs Bolt T-Shirt
+[2025-09-19T04:41:53.162Z] INFO: Item removed: Sauce Labs Fleece Jacket
+[2025-09-19T04:41:53.232Z] INFO: Item removed: Sauce Labs Onesie
+[2025-09-19T04:41:53.297Z] INFO: Item removed: Test.allTheThings() T-Shirt (Red)
+[2025-09-19T04:41:54.663Z] INFO: Item removed: Sauce Labs Backpack
+[2025-09-19T04:41:54.746Z] INFO: Item removed: Sauce Labs Bike Light
+[2025-09-19T04:41:54.832Z] INFO: Item removed: Sauce Labs Bolt T-Shirt
+[2025-09-19T04:41:54.921Z] INFO: Item removed: Sauce Labs Fleece Jacket
+[2025-09-19T04:41:55.002Z] INFO: Item removed: Sauce Labs Onesie
+[2025-09-19T04:41:55.098Z] INFO: Item removed: Test.allTheThings() T-Shirt (Red)
+[2025-09-19T07:24:18.175Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+[2025-09-19T07:24:18.176Z] INFO: ✅ config.userName =standard_user
+[2025-09-19T07:24:18.176Z] INFO: ✅ config.passWord =secret_sauce
+[2025-09-19T07:24:30.651Z] INFO: Item removed: Sauce Labs Backpack
+[2025-09-19T07:24:30.734Z] INFO: Item removed: Sauce Labs Bike Light
+[2025-09-19T07:24:30.817Z] INFO: Item removed: Sauce Labs Bolt T-Shirt
+[2025-09-19T07:24:30.867Z] INFO: Item removed: Sauce Labs Fleece Jacket
+[2025-09-19T07:24:30.917Z] INFO: Item removed: Sauce Labs Onesie
+[2025-09-19T07:24:31.001Z] INFO: Item removed: Test.allTheThings() T-Shirt (Red)
+[2025-09-19T07:24:31.604Z] INFO: Item removed: Sauce Labs Backpack
+[2025-09-19T07:24:31.689Z] INFO: Item removed: Sauce Labs Bike Light
+[2025-09-19T07:24:31.770Z] INFO: Item removed: Sauce Labs Bolt T-Shirt
+[2025-09-19T07:24:31.852Z] INFO: Item removed: Sauce Labs Fleece Jacket
+[2025-09-19T07:24:31.900Z] INFO: Item removed: Sauce Labs Onesie
+[2025-09-19T07:24:31.948Z] INFO: Item removed: Test.allTheThings() T-Shirt (Red)
+>>>>>>> bf8251f ( Add noti telegram)
