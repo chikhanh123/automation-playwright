@@ -1,0 +1,102 @@
+name: Playwright + Allure (versioned reports)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests (generate allure-results)
+        # '|| true' để bước tiếp tục even if tests fail (still want report)
+        run: npm run test || true
+
+      - name: Generate Allure HTML report
+        run: npm run report:build
+
+      - name: Checkout gh-pages branch (if exists) — copy previous reports
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: gh-pages
+        continue-on-error: true
+
+      - name: Prepare site folder and add new run
+        env:
+          RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          set -e
+          rm -rf site || true
+          mkdir site
+
+          # if gh-pages was checked out, copy its files into site/
+          if [ -d "gh-pages" ]; then
+            cp -r gh-pages/* site/ || true
+          fi
+
+          # create folder for this run
+          run_dir="run-${RUN_NUMBER}"
+          mkdir -p "site/${run_dir}"
+          cp -r allure-report/* "site/${run_dir}/"
+
+          # generate/update index.html listing runs (sorted desc)
+          python3 - << 'PY'
+          import os
+          p = 'site'
+          if not os.path.exists(p):
+              os.makedirs(p)
+
+          dirs = [d for d in os.listdir(p) if os.path.isdir(os.path.join(p, d)) and d.startswith('run-')]
+
+          # sort by numeric suffix descending
+          def keyfn(x):
+              try:
+                  return int(x.replace('run-', ''))
+              except:
+                  return 0
+
+          dirs.sort(key=keyfn, reverse=True)
+
+          # better links for pages site (relative)
+          links = '\n'.join(f"<li><a href='./{d}/'>{d}</a></li>" for d in dirs)
+
+          html = f"""<!doctype html>
+          <html>
+          <head><meta charset='utf-8'><title>Allure Reports - {os.environ.get('GITHUB_REPOSITORY')}</title></head>
+          <body>
+            <h1>Allure Reports</h1>
+            <p>Generated runs (latest first):</p>
+            <ul>
+              {links}
+            </ul>
+          </body>
+          </html>"""
+
+          with open(os.path.join(p, 'index.html'), 'w') as f:
+              f.write(html)
+          PY
+
+      - name: Deploy site to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
