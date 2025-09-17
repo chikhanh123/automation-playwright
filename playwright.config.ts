@@ -48,7 +48,7 @@ export default defineConfig({
     }], 
   ],
   use: {
-    headless: false,
+    headless: true,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
