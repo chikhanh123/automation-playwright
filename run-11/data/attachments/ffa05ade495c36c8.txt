@@ -1,0 +1,6 @@
+[2025-09-19T09:16:09.812Z] INFO: ✅ config.baseURL =https://www.saucedemo.com
+
+[2025-09-19T09:16:09.820Z] INFO: ✅ config.userName =standard_user
+
+[2025-09-19T09:16:09.820Z] INFO: ✅ config.passWord =secret_sauce
+
